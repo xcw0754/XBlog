@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+
+  {{ content|safe }}
+
+  {% if pub_time %}
+    <p class="page-date"> posted@ {{ format_datetime_weekday(pub_time) }}
+  {% endif %}
+
+  {% if tags %}
+    <p class=page-tags>标签：
+    {% for tag in tags %}
+      {%- if not loop.first %} , {% endif -%}
+      <!-- {%- if loop.last and not loop.first %} and {% endif %} -->
+      <a href="/tag/{{ tag.id }}">{{ tag.name }}</a>
+    {%- endfor %}
+  {% endif %}
+
+{% endblock %}

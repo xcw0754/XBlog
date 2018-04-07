@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        {% block htmlhead %}
+            <title>{{ config.AUTHOR }}的博客</title>
+            <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+            <link rel="stylesheet" href="/static/style.css" type="text/css">
+        {% endblock %}
+    </head>
+
+  <body>
+    <div class=container>
+
+      <div class=header>
+          <a href="/">{{ config.AUTHOR }}</a> 的博客
+      </div>
+      <div class=navigation>
+        <ul>
+          <li><a href="/">随笔</a>
+          <li><a href="/tags">标签</a>
+          <li><a href="/links">链接</a>
+          <li><a href="/about">关于</a>
+        </ul>
+      </div>
+
+      <div class=body>
+        {% block body %}{% endblock %}
+
+        <!--
+        <div class=adspace>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:728px;height:90px"
+               data-ad-client="ca-pub-6757320953560275"
+               data-ad-slot="8324866143"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+        -->
+      </div>
+
+      <div class=footer>
+        <p>&copy; Copyright 2018 by X.
+        <p>
+          Content licensed under the Creative Commons
+          attribution-noncommercial-sharealike License.
+        <p>
+          Contact me via 
+          <a href="mailto:xcw0754@163.com">mail</a>,
+          or
+          <a href="http://github.com/xcw0754" target="_blank">github</a>.
+        <p>
+        <!--<a>Subscribe</a> this blog.
+        -->
+      </div>
+    </div>
+  </body>
+</html>
